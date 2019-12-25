@@ -3,18 +3,24 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-    //Player inherits from MovingObject, our base class for objects that can move, Enemy also inherits from this.
+    //Player inherits from MovingObject
     public class Player : MovingObject
     {
-        public float restartLevelDelay = 1f;        //Delay time in seconds to restart level.
-        public int pointsPerFood = 10;                //Number of points to add to player food points when picking up a food object.
-        public int pointsPerSoda = 20;                //Number of points to add to player food points when picking up a soda object.
-        public int wallDamage = 1;                    //How much damage a player does to a wall when chopping it.
+        public float restartLevelDelay = 1f;
+        public int pointsPerFood = 10;
+        public int pointsPerSoda = 20;
+        public int wallDamage = 1;
         public Text foodText;
+        public AudioClip moveSound1;
+        public AudioClip moveSound2;
+        public AudioClip eatSound1;
+        public AudioClip eatSound2;
+        public AudioClip drinkSound1;
+        public AudioClip drinkSound2;
+        public AudioClip gameOverSound;
 
-
-        private Animator animator;                    //Used to store a reference to the Player's animator component.
-        private int food;                            //Used to store player food points total during level.
+        private Animator animator;
+        private int food;
 
 
         //Start overrides the Start function of MovingObject
@@ -85,6 +91,10 @@ using UnityEngine.SceneManagement;
 
             //Hit allows us to reference the result of the Linecast done in Move.
             RaycastHit2D hit;
+            if (Move (xDir, yDir, out hit))
+            {
+                SoundManager.instance.RandomizeSfx(moveSound1, moveSound2);
+            }
 
             //If Move returns true, meaning Player was able to move into an empty space.
             if (Move (xDir, yDir, out hit)) 
@@ -135,7 +145,7 @@ using UnityEngine.SceneManagement;
                 food += pointsPerFood;
 
                 foodText.text = "+" + pointsPerFood + " Food: " + food;
-
+                SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
                 //Disable the food object the player collided with.
                 other.gameObject.SetActive (false);
             }
@@ -147,7 +157,7 @@ using UnityEngine.SceneManagement;
                 food += pointsPerSoda;
 
                 foodText.text = "+" + pointsPerSoda + " Food: " + food;
-
+                SoundManager.instance.RandomizeSfx(drinkSound1, drinkSound2);
                 //Disable the soda object the player collided with.
                 other.gameObject.SetActive (false);
             }
@@ -185,7 +195,8 @@ using UnityEngine.SceneManagement;
             //Check if food point total is less than or equal to zero.
             if (food <= 0) 
             {
-
+                SoundManager.instance.PlaySingle(gameOverSound);
+                SoundManager.instance.musicSource.Stop();
                 //Call the GameOver function of GameManager.
                 GameManager.instance.GameOver ();
             }
