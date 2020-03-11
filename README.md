@@ -1,5 +1,14 @@
-# CollegeGame
- This is a Rougelike dungeon clawler game that I am currently developing for my game design course.
+# The Tales of Cat: The Uncharted Caves
+ This game is all about surviving for as long as possible. With no way out, your only hope is that you can survive long enough before you run out of food.
+ 
+ ##Controls
+ The default controls are:
+ W -or- UP Arrow: Move up
+ A -or- LEFT Arrow: Move left
+ D -or- RIGHT Arrow: Move right
+ S -or- DOWN Arrow: Move down
+ 
+ These controls can be changed by changing them in the Input menu when the game is first started.
  
  ## Instalation
  ### Installing on Windows
