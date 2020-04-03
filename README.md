@@ -32,3 +32,4 @@
  
  ## Credits
  Stephen Vockins - Project leader, Programer and Sprite Artist
+ Neku - Music Airtist - Lilycove (Main Theme)
