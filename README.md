@@ -1,7 +1,10 @@
 # The Tales of Cat: The Uncharted Caves
  This game is all about surviving for as long as possible. With no way out, your only hope is that you can survive long enough before you run out of food.
  
- ##Controls
+ ## Objectives
+ The goal of the game is to try and complete as many rooms as possible without running out of food. There will be monsters you have to avoid as well as food to pick up along the way.
+ 
+ ## Controls
  The default controls are:
  W -or- UP Arrow: Move up
  A -or- LEFT Arrow: Move left
