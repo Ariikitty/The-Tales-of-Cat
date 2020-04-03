@@ -31,5 +31,5 @@
  This game was made in Unity version 2019.2.12f1
  
  ## Credits
- Stephen Vockins - Project leader, Programer and Sprite Artist
+ Stephen Vockins - Project leader, Programer and Sprite Artist  
  Neku - Music Airtist - Lilycove (Main Theme)
