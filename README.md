@@ -1,4 +1,4 @@
-# The Tales of Cat: The Uncharted Caves
+# The Tales of Cat
  This game is all about surviving for as long as possible. With no way out, your only hope is that you can survive long enough before you run out of food.
  
  ## Objectives
@@ -31,5 +31,5 @@
  This game was made in Unity version 2019.2.12f1
  
  ## Credits
- Stephen Vockins - Project leader, Programer and Sprite Artist  
+ Arianna Vockins - Project leader, Programer and Sprite Artist  
  Neku - Music Airtist - Lilycove (Main Theme)
